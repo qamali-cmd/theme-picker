@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Control Panel</title>
+    <style>
+        
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 50px;
+            transition: background-color 0.4s ease;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 { color: #333; }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+    
+        .btn-red { background-color: #ff4d4d; }
+        .btn-blue { background-color: #3399ff; }
+        .btn-green { background-color: #4CAF50; }
+        .btn-yellow { background-color: #f1c40f; color: black; }
+        .btn-reset { background-color: #333; }
+    </style>
+</head>
+<body id="myBody">
+
+    <div class="container">
+        <h1>Ali's Theme Picker</h1>
+        <p>Choose a color for your background:</p>
+
+        <button class="btn-red" onclick="setTheme('#ff4d4d')">Red</button>
+        <button class="btn-blue" onclick="setTheme('#3399ff')">Blue</button>
+        <button class="btn-green" onclick="setTheme('#4CAF50')">Green</button>
+        <button class="btn-yellow" onclick="setTheme('#f1c40f')">Yellow</button>
+        
+        <br><br>
+        
+        <button class="btn-reset" onclick="resetTheme()">Reset to White</button>
+    </div>
+
+    <script>
+       
+        function setTheme(userColor) {
+            document.getElementById("myBody").style.backgroundColor = userColor;
+            console.log("Color changed to: " + userColor);
+        }
+
+        function resetTheme() {
+            document.getElementById("myBody").style.backgroundColor = "#f0f0f0";
+            alert("Background has been reset!");
+        }
+    </script>
+
+</body>
+</html>
